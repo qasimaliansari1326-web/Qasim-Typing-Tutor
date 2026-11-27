@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qasim Typing Tutor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Qasim Typing Tutor</h1>
+    <p>Learn typing with proper finger placement</p>
+</header>
+
+<main class="container">
+
+    <section class="settings">
+        <label for="time-select">Choose Time:</label>
+
+        <select id="time-select">
+            <option value="30">30 Seconds</option>
+            <option value="60" selected>1 Minute</option>
+            <option value="120">2 Minutes</option>
+            <option value="300">5 Minutes</option>
+            <option value="custom">Custom Time</option>
+        </select>
+
+        <input
+            type="number"
+            id="custom-time"
+            placeholder="Minutes"
+            min="1"
+            max="60"
+            hidden
+        >
+    </section>
+
+    <section class="stats">
+        <div class="stat-box">
+            <h2 id="wpm">0</h2>
+            <p>WPM</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 id="accuracy">100%</h2>
+            <p>Accuracy</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 id="timer">60</h2>
+            <p>Seconds</p>
+        </div>
+    </section>
+
+    <section class="typing-area">
+        <h2>Typing Practice</h2>
+
+        <div id="text-display"></div>
+
+        <textarea
+            id="typing-input"
+            placeholder="Click Start and begin typing..."
+            disabled
+        ></textarea>
+
+        <button id="start-btn">Start Practice</button>
+        <button id="reset-btn">Reset</button>
+
+        <p id="result"></p>
+    </section>
+
+    <section class="finger-section">
+        <h2>Finger Position Guide</h2>
+        <p>Red dot shows which finger to use next.</p>
+
+        <div class="hands">
+
+            <div class="hand" id="left-hand">
+                <h3>Left Hand</h3>
+                <div class="fingers">
+                    <div class="finger" data-finger="left-pinky">
+                        <span class="dot"></span>
+                        <span>Pinky</span>
+                    </div>
+                    <div class="finger" data-finger="left-ring">
+                        <span class="dot"></span>
+                        <span>Ring</span>
+                    </div>
+                    <div class="finger" data-finger="left-middle">
+                        <span class="dot"></span>
+                        <span>Middle</span>
+                    </div>
+                    <div class="finger" data-finger="left-index">
+                        <span class="dot"></span>
+                        <span>Index</span>
+                    </div>
+                    <div class="finger" data-finger="left-thumb">
+                        <span class="dot"></span>
+                        <span>Thumb</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hand" id="right-hand">
+                <h3>Right Hand</h3>
+                <div class="fingers">
+                    <div class="finger" data-finger="right-thumb">
+                        <span class="dot"></span>
+                        <span>Thumb</span>
+                    </div>
+                    <div class="finger" data-finger="right-index">
+                        <span class="dot"></span>
+                        <span>Index</span>
+                    </div>
+                    <div class="finger" data-finger="right-middle">
+                        <span class="dot"></span>
+                        <span>Middle</span>
+                    </div>
+                    <div class="finger" data-finger="right-ring">
+                        <span class="dot"></span>
+                        <span>Ring</span>
+                    </div>
+                    <div class="finger" data-finger="right-pinky">
+                        <span class="dot"></span>
+                        <span>Pinky</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="keyboard" id="keyboard"></div>
+
+        <p id="finger-message">Press Start to begin</p>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
